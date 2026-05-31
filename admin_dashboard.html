@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #0066cc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #0066cc;
+      color: #fff;
+    }
+    button {
+      padding: 5px 10px;
+      margin: 2px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome Admin</h1>
+  <h2>Best Travellers of the Month</h2>
+  <table id="travellersTable">
+    <tr>
+      <th>Name</th>
+      <th>Class</th>
+      <th>Destination</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>David Smith</td>
+      <td>Business</td>
+      <td>Paris</td>
+      <td>
+        <button onclick="editTraveller(this)">Edit</button>
+        <button onclick="deleteTraveller(this)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Emily Johson</td>
+      <td>Economy</td>
+      <td>Dubai</td>
+      <td>
+        <button onclick="editTraveller(this)">Edit</button>
+        <button onclick="deleteTraveller(this)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Daniel Taylor</td>
+      <td>First Class</td>
+      <td>Malayisa</td>
+      <td>
+        <button onclick="editTraveller(this)">Edit</button>
+        <button onclick="deleteTraveller(this)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Olivia Brown</td>
+      <td>Economy</td>
+      <td>Singapore</td>
+      <td>
+        <button onclick="editTraveller(this)">Edit</button>
+        <button onclick="deleteTraveller(this)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    // Delete function
+    function deleteTraveller(button) {
+      const row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+      alert("Traveller deleted successfully!");
+    }
+
+    // Edit function
+    function editTraveller(button) {
+      const row = button.parentNode.parentNode;
+      const cells = row.getElementsByTagName("td");
+
+      // Current values
+      const currentName = cells[0].innerText;
+      const currentClass = cells[1].innerText;
+      const currentDestination = cells[2].innerText;
+
+      // Prompt for new values
+      const newName = prompt("Edit Name:", currentName);
+      const newClass = prompt("Edit Class:", currentClass);
+      const newDestination = prompt("Edit Destination:", currentDestination);
+
+      // Update if not null
+      if(newName !== null) cells[0].innerText = newName;
+      if(newClass !== null) cells[1].innerText = newClass;
+      if(newDestination !== null) cells[2].innerText = newDestination;
+
+      alert("Traveller updated successfully!");
+    }
+  </script>
+</body>
+</html>
