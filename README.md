@@ -1,4 +1,4 @@
-# AQMQ-Pak-Airways
+# AQMA-Pak-Airways
 # AQMA Pak Airways ✈️
 
 AQMA Pak Airways is a simple airline website project developed using **HTML, CSS, and JavaScript** for the frontend, and **PHP with MySQL** for the backend.  
